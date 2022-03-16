@@ -24,7 +24,7 @@
 }
 
 
-@media (min-width: 375px) {
+@media only screen and (min-width: 375px) {
     .play {
         .triangle {
             top: 80%;
@@ -87,62 +87,61 @@
     }
 }
 
-@media (min-width: 1366px) {
+@media only screen and (min-width: 1280px) {
     .play {
         .triangle {
-            top: 80%;
-            transform: scale(3.5);
+            top: 100%;
         }
         .items {
             .icon {
-                width: 150px;
-                height: 150px;
+                width: 120px;
+                height: 120px;
                 border: 1rem solid;
-                background-size: 50px;
+                background-size: 40px;
 
                 &-paper {
                     @include icon($paper-icon, $paper);
-                    transform: translate(-7rem, 3rem);
+                    transform: translate(-7rem, 4rem);
 
                     &:hover {
                         cursor: pointer;
-                        transform: translate(-7rem, 3rem) scale(1.2);
+                        transform: translate(-7rem, 4rem) scale(1.2);
                     }
                 }
                 &-rock {
                     @include icon($rock-icon, $rock);
-                    transform: translate(-1rem, 15rem);
+                    transform: translate(-2rem, 13rem);
 
                     &:hover {
                         cursor: pointer;
-                        transform: translate(-1rem, 15rem) scale(1.2);
+                        transform: translate(-2rem, 13rem) scale(1.2);
                     }
                 }
                 &-scissors {
                     @include icon($scissors-icon, $scissors);
-                    transform: translateY(-4rem);
+                    transform: translateY(-1rem);
 
                     &:hover {
                         cursor: pointer;
-                        transform: translateY(-4rem) scale(1.2);
+                        transform: translateY(-1rem) scale(1.2);
                     }
                 }
                 &-lizard {
                     @include icon($lizard-icon, $lizard);
-                    transform: translate(2rem, 15rem);
+                    transform: translate(2rem, 13rem);
 
                     &:hover {
                         cursor: pointer;
-                        transform: translate(2rem, 15rem) scale(1.2);
+                        transform: translate(2rem, 13rem) scale(1.2);
                     }
                 }
                 &-spock {
                     @include icon($spock-icon, $spock);
-                    transform: translate(7rem, 3rem);
+                    transform: translate(7rem, 4rem);
 
                     &:hover {
                         cursor: pointer;
-                        transform: translate(7rem, 3rem) scale(1.2);
+                        transform: translate(7rem, 4rem) scale(1.2);
                     }
                 }
             }

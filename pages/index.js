@@ -25,7 +25,7 @@ export default function Home() {
         <DynamicHeaderWithNoSSR score={score} />
         {
           decision
-            ? <Match option={option} score={score} setScore={setScore} />
+            ? <Match option={option} score={score} setScore={setScore} setDecision={setDecision} />
             : <Game setOption={setOption} setDecision={setDecision} />
         }
         <Footer />

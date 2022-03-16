@@ -2,15 +2,15 @@
     & > button {
         
         position: absolute;
-        bottom: 2rem;
-        border: 3px solid $header-outline;
+        bottom: 1rem;
+        border: 2px solid $header-outline;
         border-radius: 10px;
-        padding: 10px 30px;
         background-color: transparent;
         
-        font-size: 1.5em;
-
+        font-size: 1em;
+        padding: 12px 30px; 
         transition: 0.3s;
+        letter-spacing: 3px;
 
         &:hover {
             background-color: $header-outline;
@@ -57,7 +57,7 @@
 }
 
 
-@media (min-width: 375px) {
+@media only screen and (min-width: 375px) {
     .footer {
         display: flex;
         justify-content: center;
@@ -89,7 +89,7 @@
 }
 
 
-@media (min-width: 1366px) {
+@media only screen and (min-width: 1280px) {
     .footer {
         & > button {
             right: 2rem;
@@ -103,16 +103,21 @@
     }
 
     .modal {
-        padding-top: 100px;
+        padding-top: 10px;
         & > .modal-content {
             width: fit-content;
             height: fit-content;
             border-radius: 10px;
-            padding: 20px;
+            padding: 0 25px 35px;
         }
         h3 {
             padding: 0;
             font-size: 1.5em;
+        }
+
+        .image-container {
+            max-width: 250px;
+            margin: 0 auto;
         }
 
     }
@@ -120,9 +125,7 @@
     .modal-head {
         display: flex;
         justify-content: space-between;
-        padding: 0 10px;
         align-items: center;
-        margin-bottom: 30px;
     }
 
     #close-button {

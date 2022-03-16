@@ -74,7 +74,7 @@
 
 }
 
-@media (min-width: 375px) {
+@media only screen and (min-width: 375px) {
     .match {
         justify-content: space-around;
 
@@ -159,7 +159,7 @@
     }
 }
 
-@media (min-width: 1366px) {
+@media only screen and (min-width: 1280px) {
     .match {
         justify-content: space-evenly;
 

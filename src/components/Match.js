@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Router from 'next/router';
 
 const results = [
     ['t', 'c', 'u', 'u', 'c'],
@@ -11,7 +10,7 @@ const results = [
 
 const choices = ['paper', 'rock', 'scissors', 'lizard', 'spock'];
 
-function Match({ score, option, setScore }) {
+function Match({ score, option, setScore, setDecision }) {
     const [result, setResult] = useState('');
     const [computerOption, setComputerOption] = useState(option);
     const [counter, setCounter] = useState(1);
@@ -26,15 +25,18 @@ function Match({ score, option, setScore }) {
 
         switch (results[computerOption][option]) {
             case 'u':
-                setScore(score + 1);
+                score++;
+                setScore(score);
                 setResult('You Win!');
                 break;
             case 'c':
-                setScore(score - 1);
+                score--;
+                setScore(score);
                 setResult('You lose!');
                 break;
             case 't':
                 setResult('It\'s a tie!');
+                setScore(score);
                 break;
             default:
                 break;
@@ -71,7 +73,7 @@ function Match({ score, option, setScore }) {
                 && (
                     <div className={`result ${counter === 0 ? 'fade-in' : ''}`}>
                         <p>{result}</p>
-                        <button onClick={Router.reload} type="button">Play Again</button>
+                        <button onClick={() => { setDecision(false)}} type="button">Play Again</button>
                     </div>
                 )
             }
@@ -89,9 +91,9 @@ function Match({ score, option, setScore }) {
                             />
                         )
                         : (
-                            <div className="counter">
-                                <p>🤔</p>
-                            </div>
+                        <div className="counter">
+                            <p>🤔</p>
+                        </div>
                         )
                 }
             </div>
