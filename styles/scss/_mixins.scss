@@ -5,12 +5,12 @@
     background-color: white;
     border-color: $color;
     box-shadow: inset 1px 6px 0px #b9c1d6,
-    0px 8px darken($color, 15%);
+    0px 4px darken($color, 15%);
 }
 
 @mixin auraShadow($color){
-    box-shadow:inset 0px 5px 6px #b9c1d6, 
-        0px 8px darken($color, 15%),
+    box-shadow:inset 1px 6px 0px #b9c1d6, 
+        0px 4px darken($color, 15%),
         0px 0px 0px 25px rgba(#ffffff, .07),
         0px 0px 0px 50px rgba(#ffffff, .05),
         0px 0px 0px 75px rgba(#ffffff, .025),

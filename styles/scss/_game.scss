@@ -8,8 +8,7 @@
     .triangle {
         position: absolute;
         align-self: center;
-        top: 50%;
-        transform: scale(1.5);
+        
     }
 
     .items {
@@ -17,35 +16,134 @@
         justify-content: center;
 
         .icon {
-            height: 150px;
-            width: 150px;
-            border: 1rem solid;
             border-radius: 50%;
             background-color: white;
             transition: transform 0.2s ease-in-out;
+        }
+    }
+}
 
-            &-paper {
-                @include icon($paper-icon, $paper);
-                transform: translateX(3rem) translateY(-1.5rem);
 
-                &:hover {
-                    transform: translateX(3rem) translateY(-1.5rem) scale(1.2);
+@media (min-width: 375px) {
+    .play {
+        .triangle {
+            top: 80%;
+            transform: scale(2.5);
+        }
+        .items {
+            .icon {
+                width: 9.5rem;
+                height: 5.5rem;
+                border: 0.6rem solid;
+                background-size: 30px;
+
+                &-paper {
+                    @include icon($paper-icon, $paper);
+                    transform: translate(-3rem, 3rem);
+
+                    &:hover {
+                        cursor: pointer;
+                        transform: translate(-3rem, 3rem) scale(1.2);
+                    }
+                }
+                &-rock {
+                    @include icon($rock-icon, $rock);
+                    transform: translate(0rem, 11rem);
+
+                    &:hover {
+                        cursor: pointer;
+                        transform: translate(0rem, 11rem) scale(1.2);
+                    }
+                }
+                &-scissors {
+                    @include icon($scissors-icon, $scissors);
+                    transform: translateY(-2rem);
+
+                    &:hover {
+                        cursor: pointer;
+                        transform: translateY(-2rem) scale(1.2);
+                    }
+                }
+                &-lizard {
+                    @include icon($lizard-icon, $lizard);
+                    transform: translate(1rem, 11rem);
+
+                    &:hover {
+                        cursor: pointer;
+                        transform: translate(1rem, 11rem) scale(1.2);
+                    }
+                }
+                &-spock {
+                    @include icon($spock-icon, $spock);
+                    transform: translate(3rem, 3rem);
+
+                    &:hover {
+                        cursor: pointer;
+                        transform: translate(3rem, 3rem) scale(1.2);
+                    }
                 }
             }
-            &-rock {
-                @include icon($rock-icon, $rock);
-                transform: translateY(9rem);
+        }
+    }
+}
 
-                &:hover {
-                    transform: translateY(9rem) scale(1.2);
+@media (min-width: 1366px) {
+    .play {
+        .triangle {
+            top: 80%;
+            transform: scale(3.5);
+        }
+        .items {
+            .icon {
+                width: 150px;
+                height: 150px;
+                border: 1rem solid;
+                background-size: 50px;
+
+                &-paper {
+                    @include icon($paper-icon, $paper);
+                    transform: translate(-7rem, 3rem);
+
+                    &:hover {
+                        cursor: pointer;
+                        transform: translate(-7rem, 3rem) scale(1.2);
+                    }
                 }
-            }
-            &-scissors {
-                @include icon($scissors-icon, $scissors);
-                transform: translateX(-3rem) translateY(-1.5rem);
+                &-rock {
+                    @include icon($rock-icon, $rock);
+                    transform: translate(-1rem, 15rem);
 
-                &:hover {
-                    transform: translateX(-3rem) translateY(-1.5rem) scale(1.2);
+                    &:hover {
+                        cursor: pointer;
+                        transform: translate(-1rem, 15rem) scale(1.2);
+                    }
+                }
+                &-scissors {
+                    @include icon($scissors-icon, $scissors);
+                    transform: translateY(-4rem);
+
+                    &:hover {
+                        cursor: pointer;
+                        transform: translateY(-4rem) scale(1.2);
+                    }
+                }
+                &-lizard {
+                    @include icon($lizard-icon, $lizard);
+                    transform: translate(2rem, 15rem);
+
+                    &:hover {
+                        cursor: pointer;
+                        transform: translate(2rem, 15rem) scale(1.2);
+                    }
+                }
+                &-spock {
+                    @include icon($spock-icon, $spock);
+                    transform: translate(7rem, 3rem);
+
+                    &:hover {
+                        cursor: pointer;
+                        transform: translate(7rem, 3rem) scale(1.2);
+                    }
                 }
             }
         }

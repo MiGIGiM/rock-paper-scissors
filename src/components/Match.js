@@ -2,17 +2,19 @@ import React, { useState, useEffect } from 'react';
 import Router from 'next/router';
 
 const results = [
-    ['t', 'c', 'u'],
-    ['u', 't', 'c'],
-    ['c', 'u', 't'],
+    ['t', 'c', 'u', 'u', 'c'],
+    ['u', 't', 'c', 'c', 'u'],
+    ['c', 'u', 't', 'c', 'u'],
+    ['c', 'u', 'u', 't', 'c'],
+    ['u', 'c', 'c', 'u', 't'],
 ];
 
-const choices = ['paper', 'rock', 'scissors'];
+const choices = ['paper', 'rock', 'scissors', 'lizard', 'spock'];
 
 function Match({ score, option, setScore }) {
     const [result, setResult] = useState('');
     const [computerOption, setComputerOption] = useState(option);
-    const [counter, setCounter] = useState(3);
+    const [counter, setCounter] = useState(1);
 
     const computerChoice = () => {
         const random = Math.floor(Math.random() * 3);
@@ -42,8 +44,8 @@ function Match({ score, option, setScore }) {
     useEffect(() => {
         const timer = counter > 0
             ? setInterval(() => {
-                setCounter(counter - 1);
-            }, 1000)
+                setCounter(counter - 0.5);
+            }, 500)
             : compare();
 
         return () => {
@@ -54,7 +56,7 @@ function Match({ score, option, setScore }) {
 
     return (
         <div className="match">
-            <div className="match-choice">
+            <div className={`match-choice ${counter === 0.5 ? 'slide-left' : ''}`}>
                 <p>You Picked</p>
                 <div className={
                     `icon icon-${choices[option]} 
@@ -74,19 +76,21 @@ function Match({ score, option, setScore }) {
                 )
             }
 
-            <div className="match-choice">
+            <div className={`match-choice ${counter === 0.5 ? 'slide-right' : ''}`}>
                 <p>The House Picked</p>
                 {
                     counter === 0
                         ? (
                             <div className={
                                 `icon icon-${choices[computerOption]}
-                        ${results[computerOption][option] === 'c' ? `icon-${choices[computerChoice]}-win` : ''}
+                        ${results[computerOption][option] === 'c' ? `icon-${choices[computerOption]}-win` : ''}
                         `
                             }
                             />
                         )
-                        : <div className="counter">{counter}</div>
+                        : <div className="counter">
+                            <p>🤔</p>
+                        </div>
                 }
             </div>
         </div>

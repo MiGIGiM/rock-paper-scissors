@@ -1,11 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
-import RulesImage from '../assets/images/image-rules.svg';
+import RulesImage from '../assets/images/image-rules-bonus.svg';
 
 function Rules({ toggleModal, isOpen }) {
   return (
     <div className="modal">
-      <div className={`modal-content ${isOpen ? 'modal-entrance' : 'modal-exit'}`}>
+      <div className={`modal-content ${isOpen ? 'fade-in' : ''}`}>
         <div className="modal-head">
           <h3>Rules</h3>
           <button id="close-button" onClick={toggleModal} type="button" aria-label="close rules modal" />

@@ -62,8 +62,11 @@
 }
 
 .counter {
-    background-color: rgba(56, 56, 56, 0.51);
+    background-color: white;
+    border-color: royalblue;
     border-radius: 50%;
+    border-radius: 50%;
+    box-shadow: inset 1px 6px 0px #b9c1d6, 0px 4px darken(royalblue, 15%);
     margin: 15% auto 0;
     display: flex;
     justify-content: center;
@@ -109,6 +112,21 @@
                     @include auraShadow($scissors);
                 }
             }
+
+            &-lizard {
+                @include icon($lizard-icon, $lizard);
+
+                &-win {
+                    @include auraShadow($lizard);
+                }
+            }
+            &-spock {
+                @include icon($spock-icon, $spock);
+
+                &-win {
+                    @include auraShadow($spock);
+                }
+            }
         }
 
         .result {
@@ -132,6 +150,8 @@
     }
 
     .counter {
+        border: 1rem solid royalblue;
+        margin: 15% auto 0;
         height: 150px;
         width: 150px;
         margin-bottom: 40px;
@@ -176,6 +196,20 @@
                     @include auraShadow($scissors);
                 }
             }
+            &-lizard {
+                @include icon($lizard-icon, $lizard);
+
+                &-win {
+                    @include auraShadow($lizard);
+                }
+            }
+            &-spock {
+                @include icon($spock-icon, $spock);
+
+                &-win {
+                    @include auraShadow($spock);
+                }
+            }
         }
 
         .result {
@@ -194,7 +228,7 @@
     .counter {
         height: 200px;
         width: 200px;
-        
+        border: 1.5rem solid royalblue;
         font-size: 2em;
     }
 }

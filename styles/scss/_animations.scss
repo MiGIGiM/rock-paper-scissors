@@ -1,5 +1,5 @@
 .fade-in {
-	animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 200ms both;
+	animation: fade-in 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 200ms both;
 }
 
 @keyframes fade-in {
@@ -11,34 +11,31 @@
   }
 }
 
-.modal-entrance {
-	animation: modal-entrance 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 200ms both;
+@media (min-width: 1366px) {
+  .slide-right {
+    animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  .slide-left {
+    animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
 }
 
-@keyframes modal-entrance {
+@keyframes slide-left {
   0% {
-    transform: scaleX(0);
-    opacity: 1;
+    transform: translateX(0);
   }
   100% {
-    transform: scaleX(1);
-    opacity: 1;
+    transform: translateX(-100px);
   }
 }
 
-.modal-exit {
-	animation: modal-exit 0.45s cubic-bezier(0.600, -0.280, 0.735, 0.045) both;
-}
 
-@keyframes modal-exit {
+
+@keyframes slide-right {
   0% {
-    transform: rotateX(0deg);
-    transform-origin: top;
-    opacity: 1;
+    transform: translateX(0);
   }
   100% {
-    transform: rotateX(-100deg);
-    transform-origin: top;
-    opacity: 0;
+    transform: translateX(100px);
   }
 }
