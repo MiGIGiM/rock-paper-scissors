@@ -51,7 +51,7 @@ function Match({ score, option, setScore }) {
         return () => {
             clearInterval(timer);
         };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [counter, computerOption]);
 
     return (
@@ -88,9 +88,11 @@ function Match({ score, option, setScore }) {
                             }
                             />
                         )
-                        : <div className="counter">
-                            <p>🤔</p>
-                        </div>
+                        : (
+                            <div className="counter">
+                                <p>🤔</p>
+                            </div>
+                        )
                 }
             </div>
         </div>
