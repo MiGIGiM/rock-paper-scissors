@@ -1,0 +1,53 @@
+.play {
+    width: 100%;
+    position: relative;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+
+    .triangle {
+        position: absolute;
+        align-self: center;
+        top: 50%;
+        transform: scale(1.5);
+    }
+
+    .items {
+        display: flex;
+        justify-content: center;
+
+        .icon {
+            height: 150px;
+            width: 150px;
+            border: 1rem solid;
+            border-radius: 50%;
+            background-color: white;
+            transition: transform 0.2s ease-in-out;
+
+            &-paper {
+                @include icon($paper-icon, $paper);
+                transform: translateX(3rem) translateY(-1.5rem);
+
+                &:hover {
+                    transform: translateX(3rem) translateY(-1.5rem) scale(1.2);
+                }
+            }
+            &-rock {
+                @include icon($rock-icon, $rock);
+                transform: translateY(9rem);
+
+                &:hover {
+                    transform: translateY(9rem) scale(1.2);
+                }
+            }
+            &-scissors {
+                @include icon($scissors-icon, $scissors);
+                transform: translateX(-3rem) translateY(-1.5rem);
+
+                &:hover {
+                    transform: translateX(-3rem) translateY(-1.5rem) scale(1.2);
+                }
+            }
+        }
+    }
+}
