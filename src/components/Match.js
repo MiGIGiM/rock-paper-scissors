@@ -10,7 +10,12 @@ const results = [
 
 const choices = ['paper', 'rock', 'scissors', 'lizard', 'spock'];
 
-function Match({ score, option, setScore, setDecision }) {
+function Match({
+    score,
+    option,
+    setScore,
+    setDecision,
+}) {
     const [result, setResult] = useState('');
     const [computerOption, setComputerOption] = useState(option);
     const [counter, setCounter] = useState(1);
@@ -25,13 +30,11 @@ function Match({ score, option, setScore, setDecision }) {
 
         switch (results[computerOption][option]) {
             case 'u':
-                score++;
-                setScore(score);
+                setScore(score + 1);
                 setResult('You Win!');
                 break;
             case 'c':
-                score--;
-                setScore(score);
+                setScore(score - 1);
                 setResult('You lose!');
                 break;
             case 't':
@@ -73,7 +76,7 @@ function Match({ score, option, setScore, setDecision }) {
                 && (
                     <div className={`result ${counter === 0 ? 'fade-in' : ''}`}>
                         <p>{result}</p>
-                        <button onClick={() => { setDecision(false)}} type="button">Play Again</button>
+                        <button onClick={() => { setDecision(false); }} type="button">Play Again</button>
                     </div>
                 )
             }
