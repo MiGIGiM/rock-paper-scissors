@@ -1,34 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend Mentor - Rock, Paper, Scissors solution
 
-## Getting Started
+This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-First, run the development server:
+## Table of contents
 
-```bash
-npm run dev
-# or
-yarn dev
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Author](#author)
+
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+- View the optimal layout for the game depending on their device's screen size
+- Maintain the state of the score after refreshing the browser
+-  Play Rock, Paper, Scissors, Lizard, Spock against the computer 
+
+### Screenshot
+
+<img src="https://i.ibb.co/NYHMk9Z/Screenshot-2023-06-19-at-20-44-07-Rock-paper-scissors.png" alt="Screenshot-2023-06-19-at-20-44-07-Rock-paper-scissors" border="0">
+
+### Links
+
+- Solution URL: [Source Code](https://github.com/MiGIGiM/rock-paper-scissors)
+- Live Site URL: [Play rock paper scissors](https://rock-paper-scissors-migigim.vercel.app/)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- Custom Data atributtes
+- [React](https://reactjs.org/) - JS library
+- [SCSS](https://styled-components.com/) - For styles
+
+
+### What I learned
+
+I challenge myself to try and use as few if statements for managing the results of the game and somehow I found out you can use a matrix to store every posible outcome the game is going to have. The matrix I used is down below
+
+```js
+const results = [
+    ['t', 'c', 'u', 'u', 'c'],
+    ['u', 't', 'c', 'c', 'u'],
+    ['c', 'u', 't', 'c', 'u'],
+    ['c', 'u', 'u', 't', 'c'],
+    ['u', 'c', 'c', 'u', 't'],
+];
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Basically the letters represent wether the player is going to win (player is represented by 'u'), if the computer is winning (that's the 'c') or if it is a tie ('t'). One disadvantege that looking back can actually be a HUGE problem is you need to remember the order in which the row are saved for it must have the same order so the results are accurate.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Author
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- Frontend Mentor - [@MiGIGiM](https://www.frontendmentor.io/profile/MiGIGiM)
+- Github - [@MiGIGiM](https://github.com/MiGIGiM)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
